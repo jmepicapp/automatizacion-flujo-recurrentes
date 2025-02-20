@@ -1,0 +1,15 @@
+flujo:
+  nombre: "Generación de Reportes Automáticos"
+  pasos:
+    - nombre: "Validación de Datos"
+      comando: "validar_datos"
+      plantilla: "validacion_datos.j2"
+      dependencias: []
+    - nombre: "Procesamiento de Datos"
+      comando: "procesar_datos"
+      plantilla: "procesamiento_datos.j2"
+      dependencias: ["Validación de Datos"]
+    - nombre: "Generación de Informe"
+      comando: "generar_reporte"
+      plantilla: "generacion_informe.j2"
+      dependencias: ["Procesamiento de Datos"]

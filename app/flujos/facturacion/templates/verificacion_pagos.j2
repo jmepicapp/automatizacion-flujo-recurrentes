@@ -1,0 +1,8 @@
+{
+    "proceso": "Verificación de Pagos",
+    "estado": "Ejecutado",
+    "fecha": "{{ fecha }}",
+    "clientes_pendientes": "{{ clientes_pendientes }}",
+    "total_pendiente": "{{ total_pendiente }}",
+    "resultado": "{% if total_pendiente > 0 %}Existen pagos pendientes.{% else %}Todos los pagos han sido realizados.{% endif %}"
+}

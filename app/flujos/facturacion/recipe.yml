@@ -1,0 +1,15 @@
+flujo:
+  nombre: "Proceso de Facturación"
+  pasos:
+    - nombre: "Verificación de Pagos"
+      comando: "verificar_pagos"
+      plantilla: "verificacion_pagos.j2"
+      dependencias: []
+    - nombre: "Generación de Factura"
+      comando: "generar_factura"
+      plantilla: "generacion_factura.j2"
+      dependencias: ["Verificación de Pagos"]
+    - nombre: "Envío de Notificación"
+      comando: "enviar_notificacion"
+      plantilla: "envio_notificacion.j2"
+      dependencias: ["Generación de Factura"]
