@@ -1,7 +1,7 @@
 """
 app/__init__.py
 Inicializa la aplicación Flask y define funciones de ayuda,
-como la carga de recipe.yml para cada flujo.
+como la carga de receta.yml para cada flujo.
 
 En esta versión, la base de datos se inicializa automáticamente al levantar la aplicación.
 """
@@ -20,6 +20,7 @@ def create_app():
     y crea la base de datos al arrancar.
     """
     app = Flask(__name__)
+
     app.config["SQLALCHEMY_DATABASE_URI"] = os.getenv("DATABASE_URL", "sqlite:///flujos.db")
     app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 
@@ -32,11 +33,11 @@ def create_app():
     return app
 
 
-def cargar_recipe(nombre_flujo: str):
+def cargar_receta(nombre_flujo: str):
     """
     Carga la definición de un flujo desde su archivo YAML
-    ubicado en app/flujos/<nombre_flujo>/recipe.yml.
+    ubicado en app/flujos/<nombre_flujo>/receta.yml.
     """
-    ruta_recipe = f"flujos/{nombre_flujo}/recipe.yml"
-    with open(ruta_recipe, "r", encoding="utf-8") as file:
+    ruta_receta = f"flujos/{nombre_flujo}/receta.yml"
+    with open(ruta_receta, "r", encoding="utf-8") as file:
         return yaml.safe_load(file)

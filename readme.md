@@ -28,14 +28,14 @@ automatizacion-flujos/
 │   ├── dependencies.py
 │   ├── flujos/
 │   │   ├── reportes/
-│   │   │   ├── recipe.yml
+│   │   │   ├── receta.yml
 │   │   │   ├── Reporte.py
 │   │   │   ├── templates/
 │   │   │   │   ├── validacion_datos.j2
 │   │   │   │   ├── procesamiento_datos.j2
 │   │   │   │   ├── generacion_informe.j2
 │   │   ├── facturacion/
-│   │   │   ├── recipe.yml
+│   │   │   ├── receta.yml
 │   │   │   ├── Factura.py
 │   │   │   ├── templates/
 │   │   │   │   ├── verificacion_pagos.j2
@@ -48,7 +48,7 @@ automatizacion-flujos/
 ```
 - **app/api.py**: Define los endpoints de la API para iniciar y consultar flujos.
 - **app/demonio.py**: Simula la ejecución de los pasos del flujo, actualizando el estado en la base de datos.
-- **app/flujos/**: Contiene las definiciones de los modelos utilizando SQLAlchemy las recipes que orquestan el flujo y las plantillas.
+- **app/flujos/**: Contiene las definiciones de los modelos utilizando SQLAlchemy las recetas que orquestan el flujo y las plantillas.
 - **diagrams/flujo_automatizado.pdf**: Diagrama visual que ilustra el proceso de automatización.
 - **tests/test_api.py**: Pruebas unitarias para asegurar el correcto funcionamiento de la API.
 
@@ -90,7 +90,7 @@ automatizacion-flujos/
    *Simulará la ejecución de los pasos de forma indefinida.*
 
 ## Personalizar los Flujos
-- Puedes editar los archivos recipe.yml para definir nuevos pasos o dependencias.
+- Puedes editar los archivos receta.yml para definir nuevos pasos o dependencias.
 - Cada paso puede tener una plantilla .j2 asociada para generar contenido dinámico (JSON, reportes, etc.).
 - Para un control de estados más completo, amplía la lógica en demonio.py y dependencies.py.
 

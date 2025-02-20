@@ -6,7 +6,7 @@ Puedes usar pytest o unittest. Aquí un ejemplo simple con unittest.
 
 import unittest
 
-from api import create_api_app
+from app.api import create_api_app
 
 
 class TestAPI(unittest.TestCase):
@@ -27,3 +27,23 @@ class TestAPI(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+reportes_body_example = {
+    "carpeta_flujo": "",
+    "cuerpo_global": {
+        "fecha": "20/02/2025",
+        "cantidad_paginas": "5",
+        "resumen": "Resumen del informe generado"
+    }
+}
+
+facturacion_body_example = {
+    "carpeta_flujo": "",
+    "cuerpo_global": {
+        "fecha": "20/02/2025",
+        "email_cliente": "jmaguero@profile.es",
+        "factura_id": 123456,
+        "nombre_cliente": "Profile",
+        "cantidad_total": 5000
+    }
+}

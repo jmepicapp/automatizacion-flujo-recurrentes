@@ -35,8 +35,8 @@ class Flujo(db.Model):
     estado = db.Column(db.String(20), default="Pendiente")  # Pendiente, En curso, Finalizada, Error
     uuid_dependencia = db.Column(db.String(36), nullable=True)
 
-    fecha_alta = db.Column(db.DateTime, default=datetime.utcnow)
-    fecha_estado = db.Column(db.DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
+    fecha_alta = db.Column(db.DateTime, default=datetime.now())
+    fecha_estado = db.Column(db.DateTime, default=datetime.now(), onupdate=datetime.now())
 
     def __repr__(self):
         return f"<Flujo {self.uuid_flujo} - {self.nombre_flujo}/{self.nombre_paso} ({self.estado})>"
